@@ -5,7 +5,7 @@ from huggingface_hub import hf_hub_download
 
 def download_labels():
     return hf_hub_download(
-        repo_id="m97j/har-safety-model",
+        repo_id="m97j/uni-har",
         repo_type="model",
         filename="class_label.json",
     )
