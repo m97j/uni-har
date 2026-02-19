@@ -1,6 +1,6 @@
-# 🖇 HAR-Safety-AI
+# 🖇 Uni-HAR: Universal Human Action Recognition
 
-[![Hugging Face Model](https://img.shields.io/badge/Hugging_Face-model_card-ff69b4)](https://huggingface.co/m97j/har-safety-model)
+[![Hugging Face Model](https://img.shields.io/badge/Hugging_Face-model_card-ff69b4)](https://huggingface.co/m97j/uni-har)
 
 **Multimodal Pose + Image Fusion-Based Action Recognition Model**
 
@@ -8,7 +8,7 @@
 
 # 📌 Project Overview
 
-HAR-Safety-AI is a **real-time human action recognition model** designed for safety-critical environments such as industrial sites and public facilities.
+Uni-HAR is a real-time human action recognition model designed to universally understand the complex dynamic movements of the human body, going beyond simple action classification.
 
 This model uses:
 
@@ -42,7 +42,7 @@ and fuses them using a multi-scale transformer architecture for robust behavior 
 # 📁 Repository Structure
 
 ```
-har-safety-ai/
+uni-har/
 │── models/
 │   ├── pose/
 │   │   └── poseformer_factorized.py
