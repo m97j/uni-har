@@ -6,7 +6,7 @@
 
 ---
 
-# 📌 Project Overview
+## 📌 Project Overview
 
 Uni-HAR is a real-time human action recognition model designed to universally understand the complex dynamic movements of the human body, going beyond simple action classification.
 
@@ -19,7 +19,7 @@ and fuses them using a multi-scale transformer architecture for robust behavior 
 
 ---
 
-# 🎯 Key Features
+## 🎯 Key Features
 
 ### 1) **Multimodal Fusion**
 
@@ -39,7 +39,7 @@ and fuses them using a multi-scale transformer architecture for robust behavior 
 
 ---
 
-# 📁 Repository Structure
+## 📁 Repository Structure
 
 ```
 uni-har/
@@ -66,7 +66,7 @@ uni-har/
 
 ---
 
-# 📦 Installation
+## 📦 Installation
 
 ```bash
 pip install torch torchvision
@@ -84,7 +84,7 @@ huggingface_hub >= 0.23
 
 ---
 
-# ⚡ Device Auto Selection
+## ⚡ Device Auto Selection
 
 The predictor automatically selects:
 
@@ -99,13 +99,13 @@ predictor = HARPredictor(weight_path, config, device="cpu")
 
 ---
 
-# 🧩 Input Format
+## 🧩 Input Format
 
 The model consumes **two parallel sequences**:
 
 ---
 
-## 1) Pose Sequence
+### 1) Pose Sequence
 
 **Tensor shape:**
 
@@ -125,7 +125,7 @@ Where:
 
 ---
 
-## 2) RGB Image Sequence
+### 2) RGB Image Sequence
 
 **Tensor shape:**
 
@@ -138,7 +138,7 @@ Where:
 
 ---
 
-# 🔍 Running Inference
+## 🔍 Running Inference
 
 Below is the minimal working example:
 
@@ -171,22 +171,18 @@ for idx, score in zip(topk_ids[0], topk_probs[0]):
 
 ---
 
-# 📈 Output Format — Probability Distribution (Not Argmax!)
+## 📈 Output Format — Probability Distribution (Not Argmax!)
 
 Unlike standard classifiers, this model produces a **500-dimensional probability vector**.  
 This design supports:
 
----
-
-## ✔ Top-K Semantic Ranking
+### ✔ Top-K Semantic Ranking
 
 ```python
 topk_ids, topk_probs = predictor.topk(pose, img, k=5)
 ```
 
----
-
-## ✔ Threshold-based Filtering
+### ✔ Threshold-based Filtering
 
 Useful in ambiguous actions:
 
@@ -196,7 +192,7 @@ filtered = predictor.threshold(pose, img, thr=0.1)
 
 ---
 
-# 📊 Dataset
+## 📊 Dataset
 
 Training is based on:
 
@@ -211,7 +207,7 @@ Training is based on:
 
 ---
 
-# 🏗 Model Architecture
+## 🏗 Model Architecture
 
 * **PoseFormerFactorized**  
   Temporal/Spatial attention separation
@@ -224,7 +220,7 @@ Training is based on:
 
 ---
 
-# 🚀 Training Strategy (Overview)
+## 🚀 Training Strategy (Overview)
 
 1. **Stage 1 — Pose-only pretraining**  
    Train PoseFormerFactorized on MPOSE
@@ -237,7 +233,7 @@ Training is based on:
 
 ---
 
-# 📜 License
+## 📜 License
 
 Apache License 2.0
 
